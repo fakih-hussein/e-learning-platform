@@ -1,15 +1,15 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ allowedUserType, allowed }) => {
+const ProtectedRoute = ({ allowedUserType, children }) => {
   const token = localStorage.getItem("token");
   const userType = parseInt(localStorage.getItem("userType"));
 
   if (!token || userType !== allowedUserType) {
-    return <Navigate to="./../pages/login.jsx" />;
+    return <Navigate to="/" />;
   }
 
-  return allowed;
+  return children;
 };
 
 export default ProtectedRoute;
