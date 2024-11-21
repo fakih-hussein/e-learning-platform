@@ -9,12 +9,13 @@ const CreateInstructor = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (loading) return; // Prevent submitting if already submitting
-
+  
+    if (loading) return; // Prevent duplicate submissions
     setLoading(true); // Set loading to true when submission starts
-
+  
     try {
+      console.log("Submitting form with: ", { username, password }); // Debug
+  
       const response = await fetch("http://localhost/elearning-platform/server/addInstructorApi.php", {
         method: "POST",
         headers: {
@@ -22,7 +23,7 @@ const CreateInstructor = () => {
         },
         body: JSON.stringify({ username, password }),
       });
-
+  
       if (response.ok) {
         setMessage("Instructor created successfully!");
         setUsername("");
@@ -37,6 +38,7 @@ const CreateInstructor = () => {
       setLoading(false); // Set loading to false when the request finishes
     }
   };
+  
 
   return (
     <div className="create-instructor-container">
