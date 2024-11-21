@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import StudentsTable from "./../components/studentsTable.jsx";
-// import InstructorsTable from "./InstructorsTable";
+import InstructorsTable from "./../components/instructorsTable";
 // import CoursesTable from "./CoursesTable";
 import "../styles/AdminPanel.css";
 
@@ -14,17 +14,17 @@ const AdminPanel = () => {
         <button className="button" onClick={() => setActiveTab("students")}>
           Students
         </button>
-        {/* <button className="button" onClick={() => setActiveTab("instructors")}>
+        <button className="button" onClick={() => setActiveTab("instructors")}>
           Instructors
         </button>
-        <button className="button" onClick={() => setActiveTab("courses")}>
+        {/* <button className="button" onClick={() => setActiveTab("courses")}>
           Courses
         </button> */}
       </div>
       <div className="content">
         {activeTab === "students" && <StudentsTable />}
-        {/* {activeTab === "instructors" && <InstructorsTable />}
-        {activeTab === "courses" && <CoursesTable />} */}
+        {activeTab === "instructors" && <InstructorsTable />}
+        {/* {activeTab === "courses" && <CoursesTable />} */}
       </div>
     </div>
   );
