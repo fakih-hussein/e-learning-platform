@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StudentsTable from "./../components/studentsTable.jsx";
 import InstructorsTable from "./../components/instructorsTable";
-// import CoursesTable from "./CoursesTable";
+import CoursesTable from "./../components/coursesTable";
 import "../styles/AdminPanel.css";
 
 const AdminPanel = () => {
@@ -17,14 +17,14 @@ const AdminPanel = () => {
         <button className="button" onClick={() => setActiveTab("instructors")}>
           Instructors
         </button>
-        {/* <button className="button" onClick={() => setActiveTab("courses")}>
+        <button className="button" onClick={() => setActiveTab("courses")}>
           Courses
-        </button> */}
+        </button>
       </div>
       <div className="content">
         {activeTab === "students" && <StudentsTable />}
         {activeTab === "instructors" && <InstructorsTable />}
-        {/* {activeTab === "courses" && <CoursesTable />} */}
+        {activeTab === "courses" && <CoursesTable />}
       </div>
     </div>
   );
