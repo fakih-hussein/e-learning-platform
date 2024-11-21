@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import StudentsTable from "./../components/studentsTable.jsx";
 import InstructorsTable from "./../components/instructorsTable";
 import CoursesTable from "./../components/coursesTable";
+import CreateInstructor from "./../components/createInstructorForm.jsx";
 import "../styles/AdminPanel.css";
 
 const AdminPanel = () => {
@@ -20,11 +21,15 @@ const AdminPanel = () => {
         <button className="button" onClick={() => setActiveTab("courses")}>
           Courses
         </button>
+        <button className="button" onClick={() => setActiveTab("createInstructor")}>
+          Create Instructor
+        </button>
       </div>
       <div className="content">
         {activeTab === "students" && <StudentsTable />}
         {activeTab === "instructors" && <InstructorsTable />}
         {activeTab === "courses" && <CoursesTable />}
+        {activeTab === "createInstructor" && <CreateInstructor />}
       </div>
     </div>
   );

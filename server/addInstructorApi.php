@@ -1,8 +1,10 @@
 <?php
 include"connection.php";
 
-$username=$_POST["username"];
-$password=$_POST["password"];
+$input = json_decode(file_get_contents("php://input"), true);
+$username = $input['username'] ?? null;
+$password = $input['password'] ?? null;
+
 
 // $hashed = password_hash($password,PASSWORD_DEFAULT);
 
