@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import AdminPanel from "./pages/adminPanel";
-// import InstructorPanel from "./pages/instructorPanel";
+import InstructorForum from "./pages/instructorForum";
 // import StudentProfile from "./pages/studentprofile";
 
 import ProtectedRoute from "./components/protectedRoute";
@@ -20,15 +20,15 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        {/* <Route
+        <Route
           path="/instructor"
           element={
             <ProtectedRoute allowedUserType={2}>
-              <InstructorPanel />
+              <InstructorForum />
             </ProtectedRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/student"
           element={
             <ProtectedRoute allowedUserType={3}>

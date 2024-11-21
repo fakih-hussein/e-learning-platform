@@ -25,8 +25,8 @@ if ($payload->userType != 2) {
     return;
 }
 
-$assignment = $_POST["assignment_title"];
-$dueDate=$_POST["due_date"];
+$assignment = $_POST["assignmentTitle"];
+$dueDate=$_POST["dueDate"];
 $id = $payload->userId;
 
 $query = $connection->prepare("INSERT INTO assignments(assignment_title,due_date,instructor_id) VALUES(?,?,?)");
